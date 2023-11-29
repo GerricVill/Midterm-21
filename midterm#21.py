@@ -14,13 +14,13 @@ def getHeart():
 @app.route('/Heart', methods=['Post'])
 def addHeart():
     heartadd = request.get_json()
-    heartinfo.append(heartinfo)
+    heartinfo.append(heartadd)
     return{'id': len(heartinfo)},200
 
 @app.route('/Heart/<int:index>', methods=['Delete'])
-def deleteHeart():
+def deleteHeart(index):
     heartinfo.pop(index)
-    return 'Deleted',200
+    return 'Deleted', 200
 
 if __name__ == '__main__':
     app.run()
